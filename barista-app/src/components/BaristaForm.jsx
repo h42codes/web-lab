@@ -112,7 +112,7 @@ const BaristaForm = () => {
         </div>
         <div className="mini-container">
           <h3>Syrup</h3>
-          <div className="answer-space" id="correct_syrup">
+          <div className="answer-space" id={correct_syrup}>
             {inputs["syrup"]}
           </div>
           <RecipeChoices
@@ -129,7 +129,7 @@ const BaristaForm = () => {
         </div>
         <div className="mini-container">
           <h3>Milk</h3>
-          <div className="answer-space" id="correct_milk">
+          <div className="answer-space" id={correct_milk}>
             {inputs["milk"]}
           </div>
           <RecipeChoices
@@ -146,7 +146,7 @@ const BaristaForm = () => {
         </div>
         <div className="mini-container">
           <h3>Blended</h3>
-          <div className="answer-space" id="correct_blended">
+          <div className="answer-space" id={correct_blended}>
             {inputs["blended"]}
           </div>
           <RecipeChoices
