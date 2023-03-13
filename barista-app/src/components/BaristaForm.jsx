@@ -1,5 +1,6 @@
 import { useState } from "react";
 import RecipeChoices from "./RecipeChoices";
+import drinksJson from "./drinks.json";
 
 const BaristaForm = () => {
   const [inputs, setInputs] = useState({
