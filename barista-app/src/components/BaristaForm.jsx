@@ -49,6 +49,26 @@ const BaristaForm = () => {
     } else {
       setCheckedBlended("correct");
     }
+
+    if (!ingredients["temperature"].includes(inputs["temperature"])) {
+      alert("For temperature, that isn't even an option!");
+      return;
+    }
+
+    if (!ingredients["syrup"].includes(inputs["syrup"])) {
+      alert("For syrup, that isn't even an option!");
+      return;
+    }
+
+    if (!ingredients["milk"].includes(inputs["milk"])) {
+      alert("For milk, that isn't even an option!");
+      return;
+    }
+
+    if (!ingredients["blended"].includes(inputs["blended"])) {
+      alert("For blended, that isn't even an option!");
+      return;
+    }
   };
 
   const onNewDrink = () => {
