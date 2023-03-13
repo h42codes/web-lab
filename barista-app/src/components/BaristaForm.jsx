@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RecipeChoices from "./RecipeChoices";
 import drinksJson from "./drinks.json";
 
@@ -40,6 +40,10 @@ const BaristaForm = () => {
     setCurrentDrink(drinksJson.drinks[randomDrinkIndex].name);
     setTrueRecipe(drinksJson.drinks[randomDrinkIndex].ingredients);
   };
+
+  useEffect(() => {
+    getNextDrink();
+  }, []);
 
   return (
     <div>
