@@ -76,7 +76,7 @@ function App() {
 
   return (
     <div className="whole-page">
-      <h1>Build Your OWn Screenshot!</h1>
+      <h1>Build Your Own Screenshot!</h1>
       <APIForm
         inputs={inputs}
         handleChange={(e) =>
