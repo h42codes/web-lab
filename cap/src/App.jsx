@@ -16,6 +16,7 @@ function App() {
 
   const [currentImage, setCurrentImage] = useState(null);
   const [prevImages, setPrevImages] = useState([]);
+  const [quota, setQuota] = useState(null);
 
   const submitForm = () => {
     let defaultValues = {
@@ -60,6 +61,7 @@ function App() {
       setCurrentImage(json.url);
       setPrevImages((images) => [...images, json.url]);
       reset();
+      getQuota();
     }
   };
 
@@ -74,9 +76,26 @@ function App() {
     });
   };
 
+  const getQuota = async () => {
+    const response = await fetch(
+      "https://api.apiflash.com/v1/urltoimage/quota?access_key=" + ACCESS_KEY
+    );
+    const result = await response.json();
+
+    setQuota(result);
+  };
+
   return (
     <div className="whole-page">
       <h1>Build Your Own Screenshot!</h1>
+      {quota ? (
+        <p className="quota">
+          {" "}
+          Remaining API calls: {quota.remaining} out of {quota.limit}
+        </p>
+      ) : (
+        <p></p>
+      )}
       <APIForm
         inputs={inputs}
         handleChange={(e) =>
